@@ -10,7 +10,7 @@ mongoose.connect('mongodb+srv://gokulramcse:wKgXMpHf3Sem4IU2@cluster0.vt3z1ap.mo
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-const Item = require('./models/item'); // Create a model for MongoDB collection
+const Item = require('./item'); // Create a model for MongoDB collection
 
 // CRUD Routes
 // Create
