@@ -1,20 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const app = express();
+let app = express();
 const cors = require('cors');
 
-app.use(bodyParser.json());
 
-
-app.use(cors())
-app.options('*', cors())
 
 mongoose.connect('mongodb+srv://gokulramcse:wKgXMpHf3Sem4IU2@cluster0.vt3z1ap.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const Item = require('./item'); // Create a model for MongoDB collection
+
+app.use(bodyParser.json());
+app.use(cors())
+app.options('*', cors())
 
 // CRUD Routes
 // Create
@@ -70,10 +70,6 @@ app.delete('/items/:id', async (req, res) => {
         res.status(404).json({ error: error.message });
     }
 });
-
-app.get('/product', cors(), function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for a Single Route'})
-})
 
 const PORT = 3000;
 app.listen(PORT, () => {
