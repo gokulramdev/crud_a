@@ -71,6 +71,10 @@ app.delete('/items/:id', async (req, res) => {
     }
 });
 
+app.get('/product', cors(), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for a Single Route'})
+})
+
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
