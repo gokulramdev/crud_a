@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 
 
 app.use(cors({
-    origin: "https://crude-demo.onrender.com"
+    origin: "https://crude-demo-study.onrender.com"
 }))
 app.options('*', cors())
 
