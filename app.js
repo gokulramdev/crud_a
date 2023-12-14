@@ -1,12 +1,16 @@
-var express = require('express');
-var cors = require('cors');
-var app = express();
-app.use(cors());
+const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const app = express();
+const cors = require('cors');
 
 app.use(bodyParser.json());
 
+
+app.use(cors({
+    origin: "https://crude-demo.onrender.com"
+}))
+app.options('*', cors())
 
 mongoose.connect('mongodb+srv://gokulramcse:wKgXMpHf3Sem4IU2@cluster0.vt3z1ap.mongodb.net/?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
