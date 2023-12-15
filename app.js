@@ -99,7 +99,7 @@ app.use(express.json());
 
 const mongoURI = 'mongodb+srv://gokulramcse:wKgXMpHf3Sem4IU2@cluster0.vt3z1ap.mongodb.net/?retryWrites=true&w=majority'; // Replace with your MongoDB connection URI
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 // Define Contact schema
 const contactSchema = new mongoose.Schema({
