@@ -11,19 +11,10 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 const Item = require('./item'); // Create a model for MongoDB collection
-
-app.use(bodyParser.json());
-app.use((res, req, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader(
-        'Access-Control-Allow-Headers',
-        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-    );
-    res.setHeader('Access-Control-Allow-Methods','GET, POST, PATCH, DELETE');
-
-    next();
-});
 app.use(cors());
+app.use(bodyParser.json());
+
+
 
 
 // CRUD Routes
