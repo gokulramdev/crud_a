@@ -27,6 +27,10 @@ app.use(cors());
 
 
 // CRUD Routes
+app.get('/test', async (req, res) => {
+        res.status(200).json({test:"ok"});
+});
+
 // Create
 app.post('/items', async (req, res) => {
     try {
