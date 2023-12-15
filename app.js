@@ -14,7 +14,7 @@ const Item = require('./item'); // Create a model for MongoDB collection
 
 app.use(bodyParser.json());
 app.use(cors())
-app.options('*', cors())
+
 
 // CRUD Routes
 // Create
