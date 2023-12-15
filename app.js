@@ -37,6 +37,10 @@ app.get('/items', async (req, res) => {
     }
 });
 
+app.get('/newroute', async (req, res) => {
+    return res.status(200).json({name:"gokul"});
+});
+
 // Read One
 app.get('/items/:id', async (req, res) => {
     try {
